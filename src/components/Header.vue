@@ -1,9 +1,8 @@
 <template>
   <header>
     <div class="container d-flex justify-content-center">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
-          <a class="navbar-brand" href="#">Navbar</a>
           <button
             class="navbar-toggler"
             type="button"
@@ -26,6 +25,9 @@
                 <router-link class="nav-link" to="/portfolio"
                   >Portfolio</router-link
                 >
+              </li>
+              <li class="nav-item">
+                <router-link class="nav-link" to="/blog">Blog</router-link>
               </li>
               <li class="nav-item dropdown">
                 <router-link
@@ -64,7 +66,7 @@
                 </div>
               </li>
               <li class="nav-item">
-                <router-link class="nav-link" to="/services"
+                <router-link class="nav-link" to="/testimonials"
                   >Testimonials</router-link
                 >
               </li>

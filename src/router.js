@@ -1,7 +1,10 @@
-import { createRouter, createWebHashHistory } from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 import HomePage from "./views/HomePage.vue";
 import HelloWorld from "./views/HelloWorld.vue";
 import ContactUs from "./views/ContactUs.vue";
+import CustomerTestimonials from "./views/CustomerTestimonials.vue";
+import PortfolioPage from "./views/PortfolioPage.vue";
+import BlogPage from "./views/BlogPage.vue";
 import NotFound from "./views/NotFound.vue";
 
 const routes = [
@@ -14,18 +17,35 @@ const routes = [
     component: HelloWorld,
   },
   {
-    path: "/*",
-    component: NotFound,
+    path: "/testimonials",
+    component: CustomerTestimonials,
   },
   {
     path: "/contact",
     component: ContactUs,
   },
+  {
+    path: "/Blog",
+    component: BlogPage,
+  },
+  {
+    path: "/portfolio",
+    component: PortfolioPage,
+  },
+  {
+    path: "/*",
+    redirect: "/404",
+  },
+  {
+    path: "/404",
+    component: NotFound,
+  },
 ];
 
 const router = createRouter({
+  mode: "history",
   // 4. Provide the history implementation to use. We are using the hash history for simplicity here.
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes, // short for `routes: routes`
 });
 
