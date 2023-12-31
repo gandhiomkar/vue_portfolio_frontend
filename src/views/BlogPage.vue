@@ -55,6 +55,20 @@ export default {
       ], // Fetch the blog data from an API or define it here
     };
   },
+  created() {
+    this.fetchBlogData();
+  },
+  methods: {
+    async fetchBlogData() {
+      try {
+        const response = await fetch("/api/blog"); // Replace '/api/blog' with your actual API endpoint
+        const data = await response.json();
+        this.blogs = data;
+      } catch (error) {
+        console.error("Error fetching blog data:", error);
+      }
+    },
+  },
 };
 </script>
 

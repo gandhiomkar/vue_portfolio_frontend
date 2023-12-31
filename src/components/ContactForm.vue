@@ -1,7 +1,11 @@
 <template>
   <div class="container flex">
     <div class="col-md-9 mb-md-0 mb-5">
-      <form @submit.prevent="submit()" id="contact-form" name="contact-form">
+      <form
+        @submit.prevent="handleSubmit()"
+        id="contact-form"
+        name="contact-form"
+      >
         <!--Grid row-->
         <div class="row">
           <!--Grid column-->
@@ -95,12 +99,23 @@ export default {
     };
   },
   methods: {
-    submit() {
-      // Handle form submission logic here
-      console.log(this.name);
-      console.log(this.email);
-      console.log(this.subject);
-      console.log(this.message);
+    handleSubmit() {
+      const FormData = {
+        name: this.name,
+        email: this.email,
+        subject: this.subject,
+        message: this.message,
+      };
+
+      axios
+        .post("/api/contactus", formData)
+        .then((response) => {
+          alert("response is submitted");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+
       this.name = "";
       this.email = "";
       this.subject = "";

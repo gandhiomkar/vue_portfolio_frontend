@@ -39,6 +39,20 @@ export default {
       ],
     };
   },
+  created() {
+    fetchTestimonialData();
+  },
+  methods: {
+    async fetchTestimonialData() {
+      try {
+        const response = await fetch("/api/customer/testimonials"); // Replace '/api/blog' with your actual API endpoint
+        const data = await response.json();
+        this.testimonials = data;
+      } catch (error) {
+        console.error("Error fetching blog data:", error);
+      }
+    },
+  },
 };
 </script>
 
