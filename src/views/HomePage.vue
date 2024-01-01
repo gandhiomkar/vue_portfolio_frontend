@@ -52,8 +52,6 @@ export default {
           src: "picsum.photos/200/300?random=9",
           alt: "mosaic collection image",
         },
-
-        // Add more items as needed
       ],
     };
   },

@@ -94,6 +94,7 @@ export default {
     return {
       name: "",
       email: "",
+      contactnumber: "",
       subject: "",
       message: "",
     };
@@ -103,6 +104,7 @@ export default {
       const FormData = {
         name: this.name,
         email: this.email,
+        contactnumber: this.contactnumber,
         subject: this.subject,
         message: this.message,
       };
@@ -118,6 +120,7 @@ export default {
 
       this.name = "";
       this.email = "";
+      this.contactnumber = "";
       this.subject = "";
       this.message = "";
     },
