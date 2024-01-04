@@ -48,7 +48,7 @@ export default {
     };
   },
   created() {
-    fetchAlbumData();
+    this.fetchAlbumData();
   },
   methods: {
     openAlbum(albumId) {

@@ -40,7 +40,7 @@ export default {
     };
   },
   created() {
-    fetchTestimonialData();
+    this.fetchTestimonialData();
   },
   methods: {
     async fetchTestimonialData() {

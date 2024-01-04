@@ -88,6 +88,7 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
   name: "ContactForm",
   data() {
@@ -110,9 +111,10 @@ export default {
       };
 
       axios
-        .post("/api/contactus", formData)
+        .post("/api/contactus", FormData)
         .then((response) => {
           alert("response is submitted");
+          console.log(response);
         })
         .catch((error) => {
           console.log(error);
